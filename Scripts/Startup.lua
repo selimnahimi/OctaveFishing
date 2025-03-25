@@ -1,5 +1,9 @@
 if (not Engine.IsEditor()) then
-    local mainMenuScene = LoadAsset('SC_Default')
-    local mainMenu = mainMenuScene:Instantiate()
-    Engine.GetWorld():SetRootNode(mainMenu)
+    local topScreenScene = LoadAsset('SC_Default')
+    local main = topScreenScene:Instantiate()
+    local bottomScreenScene = LoadAsset('SC_Inventory')
+    local inventory = bottomScreenScene:Instantiate()
+    
+    Engine.GetWorld(1):SetRootNode(main)
+    Engine.GetWorld(2):SetRootNode(inventory)
 end
